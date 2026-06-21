@@ -1,9 +1,9 @@
 # 02. HSV 색공간과 색 검출
 
 - 생성일시: 2026-06-21 17:18
-- 수정일시: 2026-06-21 17:18
+- 수정일시: 2026-06-21 17:30
 
-> 실습 파일: `02_opencv_basics/02_hsv_masking.py`
+> 실습 파일: `02_opencv_basics/03_hsv_masking.py`
 
 ## 학습 목표
 
@@ -25,10 +25,19 @@ HSV 는 색을 세 가지로 나눕니다.
 색의 종류가 H 한 축에 모이기 때문에, "H 가 0 근처면 빨강" 처럼 색을 범위로 잡기
 쉬워집니다. 그래서 색 검출에는 HSV 가 훨씬 유리합니다.
 
+## 색 검출의 흐름
+
+```mermaid
+flowchart LR
+    A[카메라 영상 BGR] -->|cvtColor| B[HSV 변환]
+    B -->|inRange 하한~상한| C[흑백 마스크]
+    C -->|bitwise_and| D[해당 색만 남긴 결과]
+```
+
 ## 핵심 코드
 
 ```python
-hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)        # BGR → HSV
+hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)        # BGR 를 HSV 로
 mask = cv2.inRange(hsv, (95, 80, 80), (130, 255, 255))  # 파랑 범위만 흰색(255)
 result = cv2.bitwise_and(frame, frame, mask=mask)   # 마스크 영역만 남김
 ```
@@ -37,6 +46,11 @@ result = cv2.bitwise_and(frame, frame, mask=mask)   # 마스크 영역만 남김
 흑백 마스크를 만듭니다. `bitwise_and` 는 그 마스크가 흰색인 곳의 원본 색만 남기고
 나머지는 지워, 화면에서 "파란 물체만 보이게" 합니다.
 
+아래는 빨강·파랑·초록 색판에서 파랑만 골라낸 예입니다. 가운데가 `inRange` 가 만든
+마스크, 오른쪽이 `bitwise_and` 로 파랑만 남긴 결과입니다.
+
+![HSV 색 마스킹: 원본·파랑 마스크·결과](images/02_hsv_mask.png)
+
 빨강은 H 가 0 과 179 양 끝에 걸쳐 있어 범위를 두 개로 나눠 잡습니다. 이 점은
 다음 장의 빙고 게임에서 다시 다룹니다.
 
@@ -44,7 +58,7 @@ result = cv2.bitwise_and(frame, frame, mask=mask)   # 마스크 영역만 남김
 
 ```bash
 cd 02_opencv_basics
-uv run 02_hsv_masking.py
+uv run 03_hsv_masking.py
 ```
 
 `1`~`5` 키로 추출할 색(빨강·노랑·초록·파랑·보라)을 바꾸고, `ESC` 로 종료합니다.

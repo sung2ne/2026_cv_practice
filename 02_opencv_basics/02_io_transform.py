@@ -4,7 +4,7 @@
 
 실행 (저장소 루트에서 00_asset_downloader.py 를 먼저 실행해 두세요):
     cd 02_opencv_basics
-    uv run 01_io_transform.py
+    uv run 02_io_transform.py
 
 학습 포인트:
     - cv2.imread / cv2.imwrite          : 이미지 읽기/쓰기

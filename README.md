@@ -1,7 +1,6 @@
 # 2026 컴퓨터 비전 실무 특강 실습 코드
 
-2026년 6월 24일~26일 진행되는 "OpenCV를 활용한 컴퓨터 비전 인식 기술" 특강 실습 저장소입니다.
-(경남정보대학교 공학기술교육혁신센터)
+"OpenCV를 활용한 컴퓨터 비전 인식 기술" 특강 실습 저장소입니다.
 
 모든 실습은 **`opencv-contrib-python` 하나로** 동작합니다. dlib처럼 빌드가 필요한 무거운 라이브러리는 쓰지 않습니다. (Teachable Machine 실습만 예외 — 아래 7번 참고)
 
@@ -45,7 +44,7 @@ uv run 01_env_check.py
 
 | 폴더 | 실습 | 핵심 기술 |
 |------|------|-----------|
-| `02_opencv_basics/` | 이미지 입출력·변환 / HSV 마스킹 | imread, cvtColor, resize, inRange |
+| `02_opencv_basics/` | 이미지 다운로드 / 입출력·변환 / HSV 마스킹 | requests, imread, cvtColor, inRange |
 | `03_color_bingo_game/` | **색깔 빙고 게임** (1일차 프로젝트) | HSV 색 검출, 실시간 게임 |
 | `04_face_detection/` | Haar / HOG / 68 랜드마크 | 객체·얼굴 검출 3종 비교 |
 | `05_face_recognition/` | **LBPH 얼굴 인식** (출입통제) | 수집→학습→인식 3단계 |
@@ -66,11 +65,14 @@ uv run main.py
 ## 3. 1일차 — OpenCV 기초 & 색상 인식
 
 ```bash
+# 이미지 다운로드 (Unsplash 무료 이미지를 requests 로 받기)
+cd 02_opencv_basics && uv run 01_image_download.py
+
 # 이미지 변환 기초 (그레이/리사이즈/회전)
-cd 02_opencv_basics && uv run 01_io_transform.py
+uv run 02_io_transform.py
 
 # HSV 색 마스킹 (1~5 키로 색 변경)
-uv run 02_hsv_masking.py
+uv run 03_hsv_masking.py
 
 # 색깔 빙고 게임 (SPACE 시작 / R 리셋 / ESC 종료)
 cd ../03_color_bingo_game && uv run main.py

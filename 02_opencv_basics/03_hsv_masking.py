@@ -5,7 +5,7 @@
 
 실행:
     cd 02_opencv_basics
-    uv run 02_hsv_masking.py
+    uv run 03_hsv_masking.py
 
 조작:
     1~5 : 추출할 색 바꾸기 (빨강/노랑/초록/파랑/보라)

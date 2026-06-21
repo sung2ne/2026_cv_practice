@@ -11,6 +11,11 @@ output/
 *.png
 *.xml
 
+# 단, 교재 그림은 커밋한다 (위 *.png/*.jpg 제외의 예외)
+!교재/images/
+!교재/images/*.png
+!교재/images/*.jpg
+
 # 얼굴 인식 실습에서 생성되는 산출물
 05_face_recognition/dataset/
 05_face_recognition/trainer/

@@ -1,7 +1,7 @@
 # 07. Teachable Machine 연동 (2일차, 선택)
 
 - 생성일시: 2026-06-21 17:18
-- 수정일시: 2026-06-21 17:18
+- 수정일시: 2026-06-21 17:30
 
 > 실습 폴더: `07_teachable_machine/` (`main.py`, `README.md`)
 
@@ -18,6 +18,15 @@
 가위, 저 손모양은 바위" 같은 분류기를 만들 수 있습니다.
 
 주소: https://teachablemachine.withgoogle.com
+
+## 전체 흐름
+
+```mermaid
+flowchart LR
+    A[브라우저에서<br/>클래스별 사진 촬영] --> B[학습 Train]
+    B -->|TensorFlow Lite 내보내기| C[model.tflite + labels.txt]
+    C -->|tf.lite.Interpreter| D[OpenCV 웹캠 실시간 분류]
+```
 
 ## 모델 만들고 내보내기
 
