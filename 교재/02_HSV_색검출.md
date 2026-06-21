@@ -1,7 +1,7 @@
 # 02. HSV 색공간과 색 검출
 
 - 생성일시: 2026-06-21 17:18
-- 수정일시: 2026-06-21 17:30
+- 수정일시: 2026-06-21 17:45
 
 > 실습 파일: `02_opencv_basics/03_hsv_masking.py`
 
@@ -28,7 +28,7 @@ HSV 는 색을 세 가지로 나눕니다.
 ## 색 검출의 흐름
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[카메라 영상 BGR] -->|cvtColor| B[HSV 변환]
     B -->|inRange 하한~상한| C[흑백 마스크]
     C -->|bitwise_and| D[해당 색만 남긴 결과]

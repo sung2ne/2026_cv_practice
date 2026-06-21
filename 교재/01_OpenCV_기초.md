@@ -1,7 +1,7 @@
 # 01. OpenCV 기초 — 이미지 다운로드와 변환
 
 - 생성일시: 2026-06-21 17:18
-- 수정일시: 2026-06-21 17:30
+- 수정일시: 2026-06-21 17:45
 
 > 실습 파일: `02_opencv_basics/01_image_download.py`, `02_opencv_basics/02_io_transform.py`
 
@@ -54,7 +54,7 @@ OpenCV 에서 이미지는 가로×세로×3(파랑·초록·빨강) 크기의 �
 ## 변환의 흐름
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[이미지 파일] -->|imread| B[숫자 배열]
     B -->|cvtColor| C[그레이스케일]
     B -->|resize| D[크기 변경]

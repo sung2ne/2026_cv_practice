@@ -1,7 +1,7 @@
 # 07. Teachable Machine 연동 (2일차, 선택)
 
 - 생성일시: 2026-06-21 17:18
-- 수정일시: 2026-06-21 17:30
+- 수정일시: 2026-06-21 17:45
 
 > 실습 폴더: `07_teachable_machine/` (`main.py`, `README.md`)
 
@@ -22,7 +22,7 @@
 ## 전체 흐름
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[브라우저에서<br/>클래스별 사진 촬영] --> B[학습 Train]
     B -->|TensorFlow Lite 내보내기| C[model.tflite + labels.txt]
     C -->|tf.lite.Interpreter| D[OpenCV 웹캠 실시간 분류]
