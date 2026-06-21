@@ -20,8 +20,8 @@ _FONT_CANDIDATES = [
 
 # 폰트가 전혀 없을 때 한글 → 로마자 대체표
 _ROMAN = {
-    "빨강": "Red", "주황": "Orange", "노랑": "Yellow", "초록": "Green",
-    "청록": "Cyan", "파랑": "Blue", "보라": "Purple", "분홍": "Pink", "검정": "Black",
+    "빨강": "Red", "주황": "Orange", "노랑": "Yellow", "연두": "Lime", "초록": "Green",
+    "청록": "Cyan", "파랑": "Blue", "보라": "Purple", "분홍": "Pink",
     "빙고!": "BINGO!", "시간": "Time", "점수": "Score",
 }
 
