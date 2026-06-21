@@ -1,11 +1,26 @@
+# 가상환경 / 캐시
 .venv/
 __pycache__/
 *.pyc
 .DS_Store
+
+# 다운로드되는 에셋 (00_asset_downloader.py 로 생성)
 data/
 output/
 *.jpg
 *.png
 *.xml
-*.dat
+
+# 얼굴 인식 실습에서 생성되는 산출물
+05_face_recognition/dataset/
+05_face_recognition/trainer/
+05_face_recognition/names.json
+
+# Teachable Machine 모델 (각자 내보내서 배치)
+*.tflite
+
+# 학습/모델 산출물
 *.yml
+*.dat
+
+# 참고: pyproject.toml 과 uv.lock 은 재현성을 위해 반드시 커밋합니다.

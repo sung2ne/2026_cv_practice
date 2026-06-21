@@ -1,0 +1,19 @@
+[project]
+name = "cv-practice"
+version = "1.0.0"
+description = "2026 컴퓨터 비전 실무 특강 실습 코드 (경남정보대 공학기술교육혁신센터)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0",
+    "opencv-contrib-python>=4.10",
+    "pillow>=10.0",
+    "requests>=2.31",
+]
+
+# Teachable Machine(7번 실습)에서만 필요한 무거운 선택 의존성.
+# 설치: uv sync --extra teachable    (또는)  uv add tensorflow
+[project.optional-dependencies]
+teachable = [
+    "tensorflow>=2.16",
+]
