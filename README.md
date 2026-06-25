@@ -65,7 +65,7 @@ uv run main.py
 ## 3. 1일차 — OpenCV 기초 & 색상 인식
 
 ```bash
-# 이미지 다운로드 (Unsplash 무료 이미지를 requests 로 받기)
+# 이미지 다운로드 (Pexels 무료 이미지를 requests 로 받기)
 cd 02_opencv_basics && uv run 01_image_download.py
 
 # 이미지 변환 기초 (그레이/리사이즈/회전)

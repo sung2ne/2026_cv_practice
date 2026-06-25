@@ -1,7 +1,7 @@
 # 01. OpenCV 기초 — 이미지 다운로드와 변환
 
 - 생성일시: 2026-06-21 17:18
-- 수정일시: 2026-06-21 17:45
+- 수정일시: 2026-06-25 22:17
 
 > 실습 파일: `02_opencv_basics/01_image_download.py`, `02_opencv_basics/02_io_transform.py`
 
@@ -15,13 +15,13 @@
 ## 먼저, 실습 이미지 내려받기
 
 컴퓨터 비전 실습의 첫걸음은 다룰 이미지를 준비하는 일입니다. 이 특강에서는 저작권
-걱정이 없는 무료 이미지 사이트 Unsplash(https://unsplash.com)에서 사진을 받아 씁니다.
+걱정이 없는 무료 이미지 사이트 Pexels(https://www.pexels.com)에서 사진을 받아 씁니다.
 
 ```python
 import requests
 
-image_url = "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?w=640"
-file_name = "sample.jpg"
+image_url = "https://images.pexels.com/photos/60628/flower-garden-blue-sky-hokkaido-japan-60628.jpeg?w=640"
+file_name = "../data/images/sample.jpg"          # 다음 실습들이 읽는 공용 위치
 
 response = requests.get(image_url, timeout=30)   # HTTP GET 요청
 if response.status_code == 200:                  # 200 = 성공
@@ -40,7 +40,8 @@ uv run 01_image_download.py
 ```
 
 > 여러 이미지와 모델을 한 번에 받으려면 저장소 루트의 `00_asset_downloader.py` 를
-> 쓰면 됩니다. 위 코드는 다운로드가 어떻게 동작하는지 직접 보기 위한 학습용입니다.
+> 쓰면 됩니다. 위 코드는 다운로드가 어떻게 동작하는지 직접 보기 위한 학습용이며,
+> 받는 위치(`../data/images/sample.jpg`)가 같아 바로 다음 실습이 이 파일을 그대로 씁니다.
 
 ## 이미지는 숫자다
 

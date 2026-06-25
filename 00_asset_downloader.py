@@ -16,12 +16,15 @@ import requests
 # 실습 에셋 목록 ---------------------------------------------------------------
 ASSETS = {
     "images": {
-        # 색상/이미지 처리 실습용 (다채로운 색이 포함된 사진)
-        "sample.jpg": "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?w=800",
-        # HOG 사람 검출 실습용 (사람이 여러 명 있는 사진)
-        "people.jpg": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=1200",
-        # 얼굴 검출/랜드마크 실습용
-        "face_test.jpg": "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=800",
+        # 색상/이미지 처리 실습용 (다채로운 색이 포함된 사진) — Pexels 무료 이미지
+        "sample.jpg": "https://images.pexels.com/photos/60628/"
+            "flower-garden-blue-sky-hokkaido-japan-60628.jpeg?auto=compress&cs=tinysrgb&w=800",
+        # HOG 사람 검출 실습용 (사람이 여러 명 있는 사진) — Pexels 무료 이미지
+        "people.jpg": "https://images.pexels.com/photos/2668720/"
+            "pexels-photo-2668720.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        # 얼굴 검출/랜드마크 실습용 — Pexels 무료 이미지
+        "face_test.jpg": "https://images.pexels.com/photos/3779760/"
+            "pexels-photo-3779760.jpeg?auto=compress&cs=tinysrgb&w=800",
     },
     "models": {
         # Haar Cascade 정면 얼굴 검출기 (OpenCV 공식)
